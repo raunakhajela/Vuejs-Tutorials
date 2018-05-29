@@ -1,0 +1,34 @@
+<html>
+	<body>
+		<script src="vue.js"></script>
+
+		<div id="app">
+		  <button v-on:click="increase">Click me</button>
+		  <p>{{counter}}</p>
+		  <p v-on:mousemove="updateCoordinates">Coordinates: {{x}} / {{y}}</p>
+		</div>
+
+		<script>
+
+			new Vue({
+				el: '#app',
+			  data: {
+			  	counter: 0,
+			  	x: 0,
+			  	y: 0
+			  },
+			  methods: {
+			  	increase: function(){
+			  		this.counter++;
+			  	},
+			  	updateCoordinates: function(event){
+			  		//clientX and clientY are the default property names of the event object, it has nothing to do with the vuejs
+			  		this.x = event.clientX;
+			  		this.y = event.clientY;
+			  	}
+			  }
+			});
+
+		</script>
+	</body>
+</html>

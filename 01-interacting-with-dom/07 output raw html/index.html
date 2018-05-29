@@ -1,0 +1,32 @@
+<html>
+	<body>
+		<script src="vue.js"></script>
+
+		<div id="app">
+		  <h1 v-once>{{title}}</h1>
+		  <p>{{sayHello()}} - <a v-bind:href="link">Google</a></p>
+		  <hr>
+		  <!-- v-html tells vuejs to render html code and not escape it -->
+		  <p v-html="finishedLink"></p>
+		</div>
+
+		<script>
+
+			new Vue({
+				el: '#app',
+			  data: {
+			  	title: 'Hello World!',
+			  	link: 'https://google.com',
+			  	finishedLink: '<a href="https://google.com">Google</a>'
+			  },
+			  methods: {
+			  	sayHello: function(){
+			  		this.title = "Hello!";
+			    	return this.title;
+			    }
+			  }
+			});
+
+		</script>
+	</body>
+</html>

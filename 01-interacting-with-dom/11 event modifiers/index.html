@@ -1,0 +1,40 @@
+<html>
+	<body>
+		<script src="vue.js"></script>
+
+		<div id="app">
+		  <button v-on:click="increase(2, $event)">Click me</button>
+		  <p>{{counter}}</p>
+		  <p v-on:mousemove="updateCoordinates">Coordinates: {{x}} / {{y}}
+		  	<!-- to stop event you can use stopPropagation() method or can use the 'stop' modifier -->
+		   <!-- - <span v-on:mousemove="dummy">DEAD SPOT</span> -->
+		   - <span v-on:mousemove.stop="">DEAD SPOT</span>
+		  </p>
+		</div>
+
+		<script>
+
+			new Vue({
+				el: '#app',
+			  data: {
+			  	counter: 0,
+			  	x: 0,
+			  	y: 0
+			  },
+			  methods: {
+			  	increase: function(step, event){
+			  		this.counter += step;
+			  	},
+			  	updateCoordinates: function(event){
+			  		this.x = event.clientX;
+			  		this.y = event.clientY;
+			  	},
+			  	/*dummy: function(event){
+			  		event.stopPropagation();
+			  	}*/
+			  }
+			});
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+	<body>
+		<script src="vue.js"></script>
+
+		<div id="app">
+		  <!-- v-model directive tell vuejs to setup two way data binding for this field -->	
+		  <input type="text" v-model="name">	
+		  <p>{{name}}</p>
+		</div>
+
+		<script>
+
+			new Vue({
+				el: '#app',
+			  data: {
+			  	name: 'Raunak'
+			  }
+			});
+
+		</script>
+	</body>
+</html>

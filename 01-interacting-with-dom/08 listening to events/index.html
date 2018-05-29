@@ -1,0 +1,27 @@
+<html>
+	<body>
+		<script src="vue.js"></script>
+
+		<div id="app">
+		  <!-- v-on takes a event we wanna a listen to, it is just opposite of v-bind -->	
+		  <button v-on:click="increase">Click me</button>
+		  <p>{{counter}}</p>
+		</div>
+
+		<script>
+
+			new Vue({
+				el: '#app',
+			  data: {
+			  	counter: 0
+			  },
+			  methods: {
+			  	increase: function(){
+			  		this.counter++;
+			  	}
+			  }
+			});
+
+		</script>
+	</body>
+</html>

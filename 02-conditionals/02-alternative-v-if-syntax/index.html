@@ -1,0 +1,38 @@
+<html>
+	<body>
+		<script src="vue.js"></script>
+
+		<div id="app">
+			<!-- v-if attaches and dettaches element in th dom,
+			it doesn't hide it just removes element completely
+			in the dom
+			v-if shows the entire element and the nested element
+		  -->
+			<p v-if="show">You can see me!</p>
+			<p v-else>Now you see me?</p>
+			<!-- You can use template tags with vue to group the
+			elements, template tag is invisible in the dom,
+			it's just for you to use vue elements in the template -->
+			<template v-if="show">
+				<h1>Heading</h1>
+				<p>Inside a template</p>
+			</template>
+			<p>Do you also see me?</p>
+			<button @click="show = !show">Switch</button>
+		</div>
+
+		<script>
+
+			new Vue({
+				  el: '#app',
+				  data: {
+						show: true
+				  },
+				  computed: {
+
+				  }
+			  });
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<html>
+	<body>
+		<script src="vue.js"></script>
+
+		<div id="app">
+			<!-- v-if attaches and dettaches element in th dom,
+			it doesn't hide it just removes element completely
+			in the dom
+			v-if shows the entire element and the nested element
+		  -->
+			<p v-if="show">You can see me!</p>
+			<p v-else>Do you also see me?</p>
+			<button @click="show = !show">Switch</button>
+		</div>
+
+		<script>
+
+			new Vue({
+				  el: '#app',
+				  data: {
+						show: true
+				  },
+				  computed: {
+
+				  }
+			  });
+
+		</script>
+	</body>
+</html>

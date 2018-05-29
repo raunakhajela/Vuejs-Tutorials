@@ -1,0 +1,30 @@
+<html>
+	<body>
+		<script src="vue.js"></script>
+
+		<div id="app">
+			<ul>
+				<!-- here as 2nd param we are defining index 'i' to acceess specific data -->
+				<li v-for="(ingredient, i) in ingredients">{{ ingredient }} ({{ i }})</li>
+			</ul>
+		</div>
+
+		<script>
+
+			new Vue({
+				  el: '#app',
+				  data: {
+						ingredients: ['meat','fruit','cookies'],
+						persons: [
+							{name: 'Raunak', age: 23, color: 'red'},
+							{name: 'Komal', age: 22, color: 'blue'}
+						]
+				  },
+				  computed: {
+
+				  }
+			  });
+
+		</script>
+	</body>
+</html>

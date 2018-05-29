@@ -1,0 +1,28 @@
+<html>
+	<body>
+		<script src="vue.js"></script>
+
+		<div id="app">
+			<!-- we can't use curcly braces in html attributes in vue.js
+			instead we use v-bind directive -->
+		  <p>{{sayHello()}} - <a v-bind:href="link">Google</a></p>
+		</div>
+
+		<script>
+
+			new Vue({
+				el: '#app',
+			  data: {
+			  	title: 'Hello World!',
+			  	link: 'https://google.com'
+			  },
+			  methods: {
+			  	sayHello: function(){
+			    	return this.title;
+			    }
+			  }
+			});
+
+		</script>
+	</body>
+</html>

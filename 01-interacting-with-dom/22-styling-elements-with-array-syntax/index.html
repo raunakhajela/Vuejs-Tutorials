@@ -1,0 +1,49 @@
+<html>
+	<body>
+		<style>
+
+		.demo{
+			width: 100px;
+			height: 100px;
+			background-color: gray;
+			display: inline-block;
+			margin: 10px;
+		}
+
+		</style>
+		<script src="vue.js"></script>
+
+		<div id="app">
+			<!--
+			Either use 'background-color' with inverted commas or camel casing like
+			backgroundColor in vuejs otherwise it won't work
+			-->
+			<div class="demo" :style="{backgroundColor: color}"></div>
+			<div class="demo" :style="myStyle"></div>
+			<div class="demo" :style="[myStyle, {height: width + 'px'}]"></div>
+			<hr>
+			<input type="text" v-model="color" />
+			<input type="text" v-model="width" />
+		</div>
+
+		<script>
+
+			new Vue({
+				  el: '#app',
+				  data: {
+						color: 'gray',
+						width: 100
+				  },
+				  computed: {
+						myStyle: function(){
+							return {
+								backgroundColor: this.color,
+								width: this.width + 'px'
+							};
+						}
+				  }
+			  });
+
+		</script>
+	</body>
+</html>
