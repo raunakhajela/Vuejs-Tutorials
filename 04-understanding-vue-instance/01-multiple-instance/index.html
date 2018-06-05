@@ -1,0 +1,31 @@
+<html>
+	<body>
+		<script src="vue.js"></script>
+
+		<div id="app">
+		  <p>{{title}}</p>
+		</div>
+
+		<div id="app2">
+		  <p>{{title}}</p>
+		</div>
+
+		<script>
+
+			new Vue({
+				el: '#app',
+			  data: {
+			  	title: 'Hello World!'
+			  }
+			});
+
+			new Vue({
+				el: '#app2',
+			  data: {
+			  	title: 'Hello World2!'
+			  }
+			});
+
+		</script>
+	</body>
+</html>
